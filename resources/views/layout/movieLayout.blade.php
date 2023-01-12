@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-secondary">
         <div class="container">
             <ul class="navbar-nav">
             <li class="nav-item">
@@ -20,7 +20,7 @@
             <a class="nav-link @yield('menuTambah')" href="/tambah-movie">Tambahkan Movie</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link @yield('menuHapus')" href="/hapus-movie">Hapus Movie</a>
+            <a class="nav-link @yield('menuHapus')" href="/update-hapus-movie">Update/Hapus Movie</a>
             </li>
             </ul>
         </div>
@@ -28,7 +28,7 @@
 
     @yield('content')
 
-    <footer class="bg-dark py-4 text-white mt-4">
+    <footer class="bg-secondary py-4 text-white mt-4">
     <div class="container">
     Movie Database | by Taufiq Hidayat
     </div>

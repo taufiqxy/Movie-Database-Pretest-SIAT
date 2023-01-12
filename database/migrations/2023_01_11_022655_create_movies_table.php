@@ -19,8 +19,8 @@ return new class extends Migration
             $table->char('tahun',4);
             $table->char('genre');
             $table->string('sinopsis');
-            $table->char('rating',1);
-            $table->string('alamatVideo')->default('Not Available');
+            $table->char('rating',2);
+            $table->string('namaFile')->default('Not Available');
             $table->timestamps();
         });
     }
