@@ -10,7 +10,8 @@ use Illuminate\Support\Facades\File;
 class MovieController extends Controller
 {
     public function tampilMovie() {
-        return view('tampilMovie');
+        $movies = Movie::all();
+        return view('tampilMovie', ['movies' => $movies]);
     }
 
     public function tambahMovie() {

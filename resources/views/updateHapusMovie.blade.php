@@ -20,7 +20,7 @@
             <table class="table table-striped">
             <thead>
             <tr>
-            <th>#ID</th>
+            <th>No.</th>
             <th>Judul</th>
             <th>Tahun</th>
             <th>Genre</th>
@@ -50,7 +50,7 @@
             </td>
             </tr>
             @empty
-            <td colspan="6" class="text-center">Tidak Kosong, Silahkan tambah data movie</td>
+            <td colspan="6" class="text-center">Data Kosong, Silahkan tambahkan movie</td>
             @endforelse
             </tbody>
 
