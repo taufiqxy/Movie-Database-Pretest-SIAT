@@ -4,7 +4,7 @@
 App ini menggunakan framework <strong>laravel 9</strong> dan database <strong>MariaDB</strong>
 
 ## Cara Menjalankan App
-- jalankan perintah <strong>composer install</strong> didalam folder project
+- jalankan perintah <strong>composer install</strong> didalam folder project setelah di-clone
 - pastikan database aktif dan terdapat database dengan nama <b>laravel</b>
 - jalankan migration: <strong>php artisan migrate</strong>
 - buat symlink storage agar video bisa di akses public: php artisan storage:link
