@@ -16,6 +16,7 @@ use App\Http\Controllers\MovieController;
 
 Route::redirect('/', '/tampil-movie');
 Route::get('/tampil-movie', [MovieController::class, 'tampilMovie']);
+Route::get('/detail-movie/{movie_id}', [MovieController::class, 'detailMovie']);
 Route::get('/tambah-movie', [MovieController::class, 'tambahMovie'])
 ->name('halaman.tambah');
 

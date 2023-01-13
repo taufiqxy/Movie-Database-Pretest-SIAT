@@ -14,6 +14,11 @@ class MovieController extends Controller
         return view('tampilMovie', ['movies' => $movies]);
     }
 
+    public function detailMovie($movie_id) {
+        $a_movie = Movie::findOrFail($movie_id);
+        return view('detailMovie', ['movie' => $a_movie]);
+    }
+
     public function tambahMovie() {
         return view('tambahMovie');
     }
@@ -32,8 +37,9 @@ class MovieController extends Controller
         $validateData = $request->validate([
             'judul' => 'required',
             'tahun' => 'required|integer|min:2010',
-            'genre' => 'required|in:Aksi,Komedi,Drama,Fiksi Ilmiah,Misteri,Horor,Dokumenter',
+            'genre' => 'required|in:Aksi,Komedi,Drama,Fiksi Ilmiah,Misteri,Horor,Dokumenter,Pertualangan',
             'rating' => 'required|integer|between:0,10',
+            'sutradara' => 'required',
             'sinopsis' => 'required',
             'berkas' => 'required|file|mimetypes:video/mp4,video/avi,video/mpeg,video/quicktime,
                         video/x-matroska,video/x-ms-wmv,video/x-flv,video/x-msvideo,video/3gpp,video/MP2T,application/x-mpegURL,video/x-ms-asf',
@@ -51,6 +57,7 @@ class MovieController extends Controller
             'tahun' => $validateData['tahun'],
             'genre' => $validateData['genre'],
             'rating' => $validateData['rating'],
+            'sutradara' => $validateData['sutradara'],
             'sinopsis' => $validateData['sinopsis'],
             'namaFile' => $namaFile,
         ]);
@@ -63,8 +70,9 @@ class MovieController extends Controller
         $validateData = $request->validate([
             'judul' => 'required',
             'tahun' => 'required|integer|min:2010',
-            'genre' => 'required|in:Aksi,Komedi,Drama,Fiksi Ilmiah,Misteri,Horor,Dokumenter',
+            'genre' => 'required|in:Aksi,Komedi,Drama,Fiksi Ilmiah,Misteri,Horor,Dokumenter,Pertualangan',
             'rating' => 'required|integer|between:0,10',
+            'sutradara' => 'required',
             'sinopsis' => 'required',
             'berkas' => 'sometimes|file|mimetypes:video/mp4,video/avi,video/mpeg,video/quicktime,
                         video/x-matroska,video/x-ms-wmv,video/x-flv,video/x-msvideo,video/3gpp,video/MP2T,application/x-mpegURL,video/x-ms-asf',
@@ -91,6 +99,7 @@ class MovieController extends Controller
             'tahun' => $validateData['tahun'],
             'genre' => $validateData['genre'],
             'rating' => $validateData['rating'],
+            'sutradara' => $validateData['sutradara'],
             'sinopsis' => $validateData['sinopsis'],
             'namaFile' => $namaFile,
         ]);

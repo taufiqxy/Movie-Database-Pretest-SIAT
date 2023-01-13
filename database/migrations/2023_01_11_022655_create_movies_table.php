@@ -20,6 +20,7 @@ return new class extends Migration
             $table->char('genre');
             $table->string('sinopsis');
             $table->char('rating',2);
+            $table->char('sutradara');
             $table->string('namaFile')->default('Not Available');
             $table->timestamps();
         });

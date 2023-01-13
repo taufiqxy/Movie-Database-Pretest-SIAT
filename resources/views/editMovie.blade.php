@@ -67,6 +67,10 @@
                         {{ $movie->genre=='Fiksi Ilmiah' ? 'selected': '' }} >
                         Fiksi Ilmiah
                         </option>
+                        <option value="Pertualangan"
+                        {{ $movie->genre=='Pertualangan' ? 'selected': '' }} >
+                        Pertualangan
+                        </option>
                         <option value="Misteri"
                         {{ $movie->genre=='Misteri' ? 'selected': '' }} >
                         Misteri
@@ -89,6 +93,14 @@
                     <input type="text" id="rating" name="rating" value="{{ $movie->rating }}"
                     class="form-control @error('rating') is-invalid @enderror">
                     @error('rating')
+                    <div class="text-danger">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="sutradara">Sutradara</label>
+                    <input type="text" id="sutradara" name="sutradara" value="{{ $movie->sutradara }}"
+                    class="form-control @error('sutradara') is-invalid @enderror">
+                    @error('sutradara')
                     <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>

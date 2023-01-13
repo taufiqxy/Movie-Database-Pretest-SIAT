@@ -18,7 +18,7 @@
                 @csrf
                 <div class="mb-3">
                     <label class="form-label" for="judul">Judul Movie</label>
-                    <input type="text" id="judul" name="judul"
+                    <input type="text" id="judul" name="judul", value="{{old('judul')}}"
                     class="form-control @error('judul') is-invalid @enderror">
                     @error('judul')
                     <div class="text-danger">{{ $message }}</div>
@@ -35,6 +35,9 @@
                                 let opt = document.createElement('option');
                                 opt.value = i;
                                 opt.innerHTML = i;
+                                if ( i == {{old('tahun', 0)}} ) {
+                                    opt.selected = 'selected';
+                                }
                                 select.appendChild(opt);
                             }
                         </script>
@@ -46,26 +49,29 @@
                 <div class="mb-3">
                     <label class="form-label" for="genre">Genre</label>
                     <select class="form-select" name="genre" id="genre">
-                        <option value="Aksi" >
-                        Aksi
+                        <option value="Aksi" {{ old('genre')=='Aksi' ? 'selected': '' }}>
+                            Aksi
                         </option>
-                        <option value="Komedi">
-                        Komedi
+                        <option value="Komedi" {{ old('genre')=='Komedi' ? 'selected': '' }}>
+                            Komedi
                         </option>
-                        <option value="Drama">
-                        Drama
+                        <option value="Drama" {{ old('genre')=='Drama' ? 'selected': '' }}>
+                            Drama
                         </option>
-                        <option value="Fiksi Ilmiah">
-                        Fiksi Ilmiah
+                        <option value="Fiksi Ilmiah" {{ old('genre')=='Fiksi Ilmiah' ? 'selected': '' }}>
+                            Fiksi Ilmiah
                         </option>
-                        <option value="Misteri">
-                        Misteri
+                        <option value="Pertualangan" {{ old('genre')=='Pertualangan' ? 'selected': '' }}>
+                            Pertualangan
                         </option>
-                        <option value="Horor">
-                        Horor
+                        <option value="Misteri" {{ old('genre')=='Misteri' ? 'selected': '' }}>
+                            Misteri
                         </option>
-                        <option value="Dokumenter">
-                        Dokumenter
+                        <option value="Horor" {{ old('genre')=='Horor' ? 'selected': '' }}>
+                            Horor
+                        </option>
+                        <option value="Dokumenter" {{ old('genre')=='Dokumenter' ? 'selected': '' }}>
+                            Dokumenter
                         </option>
                     </select>
                     @error('genre')
@@ -74,16 +80,24 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="rating">Rating</label>
-                    <input type="text" id="rating" name="rating"
+                    <input type="text" id="rating" name="rating" value="{{old('rating')}}"
                     class="form-control @error('rating') is-invalid @enderror">
                     @error('rating')
                     <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>
                 <div class="mb-3">
+                    <label class="form-label" for="sutradara">Sutradara</label>
+                    <input type="text" id="sutradara" name="sutradara" value="{{old('sutradara')}}"
+                    class="form-control @error('sutradara') is-invalid @enderror">
+                    @error('sutradara')
+                    <div class="text-danger">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div class="mb-3">
                     <label class="form-label" for="sinopsis">Sinopsis</label>
                     <textarea class="form-control" id="sinopsis" rows="3"
-                    name="sinopsis"></textarea>
+                    name="sinopsis">{{old('sinopsis')}}</textarea>
                     @error('sinopsis')
                     <div class="text-danger">{{ $message }}</div>
                     @enderror

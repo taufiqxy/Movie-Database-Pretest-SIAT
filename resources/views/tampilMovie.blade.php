@@ -22,7 +22,7 @@
                 <p>{{$movie->judul}} ({{$movie->tahun}})</p>
 
                   <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Informasi Detail</button>
+                    <a href="/detail-movie/{{ $movie->id }}" class="btn btn-primary">Informasi Detail</a>
                   </div>
 
               </div>

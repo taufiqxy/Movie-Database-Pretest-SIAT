@@ -25,6 +25,7 @@
             <th>Tahun</th>
             <th>Genre</th>
             <th>Rating</th>
+            <th>Sutradara</th>
             <th>Sinopsis</th>
             <th>Nama File</th>
             </tr>
@@ -38,6 +39,7 @@
             <td>{{$movie->tahun}}</td>
             <td>{{$movie->genre}}</td>
             <td>{{$movie->rating}}</td>
+            <td>{{$movie->sutradara}}</td>
             <td>{{$movie->sinopsis}}</td>
             <td>{{$movie->namaFile}}</td>
             <td><a href="/{{ $movie->id }}/edit-movie" class="btn btn-primary">Update</a></td>
@@ -50,7 +52,9 @@
             </td>
             </tr>
             @empty
-            <td colspan="6" class="text-center">Data Kosong, Silahkan tambahkan movie</td>
+            <div class="alert alert-info center-block" style="width: 100%;" role="alert">
+                <strong>Data Kosong! </strong>
+            </div>
             @endforelse
             </tbody>
 
