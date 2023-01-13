@@ -7,7 +7,7 @@ App ini menggunakan framework <strong>laravel 9</strong> dan database <strong>Ma
 - jalankan perintah <strong>composer install</strong> didalam folder project setelah di-clone
 - pastikan database aktif dan terdapat database dengan nama <b>laravel</b>
 - jalankan migration: <strong>php artisan migrate</strong>
-- buat symlink storage agar video bisa di akses public: php artisan storage:link
+- buat symlink storage agar video bisa di akses public: <strong>php artisan storage:link</strong>
 - jalankan server: <strong>php artisan serve</strong>
 - akses browser: http://127.0.0.1:8000
 
