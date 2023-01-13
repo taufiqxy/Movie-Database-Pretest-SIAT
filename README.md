@@ -9,9 +9,7 @@ App ini menggunakan framework <strong>laravel 9</strong> dan database <strong>Ma
 - jalankan server: <strong>php artisan serve</strong>
 - akses browser: http://127.0.0.1:8000
 
-
-
-note:<br>
+## Notes
 * Database masih dalam keadaan kosong, tambahkan data baru untuk melihat fungsionalitas operasi CRUD
 * untuk meng-upload file lebih dari 40 MB, ubah pengaturan php.ini berikut:<br>
 post_max_size=40M (ubah sesuai ukuran maksimal yang diinginkan, ex: 2G)<br>
